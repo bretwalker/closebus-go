@@ -1,0 +1,40 @@
+1,,1,4th Street Trolley,,3,,47C995,FFFFFF
+12,,12,Twelfth Street,,3,,829ECE,FFFFFF
+15,,15,Market Street,,3,,829ECE,FFFFFF
+17,,17,Bardstown Road,,3,,829ECE,FFFFFF
+18,,18,Preston - Dixie,,3,,829ECE,FFFFFF
+19,,19,Muhammad Ali Blvd.,,3,,829ECE,FFFFFF
+2,,2,Second Street,,3,,829ECE,FFFFFF
+21,,21,Chestnut Street,,3,,829ECE,FFFFFF
+22,,22,Twenty-Second Street,,3,,829ECE,FFFFFF
+23,,23,Broadway,,3,,829ECE,FFFFFF
+25,,25,Oak - Westport,,3,,829ECE,FFFFFF
+27,,27,Hill Street,,3,,829ECE,FFFFFF
+29,,29,Eastern Parkway,,3,,829ECE,FFFFFF
+31,,31,Shelbyville Road,,3,,829ECE,FFFFFF
+4,,4,Fourth Street,,3,,829ECE,FFFFFF
+40,,40,Taylorsville Road,,3,,829ECE,FFFFFF
+43,,43,Portland Poplar Level,,3,,829ECE,FFFFFF
+45,,45,Okolona Hillview Express,,3,,E49581,FFFFFF
+49,,49,Westport Road Express,,3,,E49581,FFFFFF
+50,,50,Dixie Highway Express,,3,,E49581,FFFFFF
+52,,52,Medical Center Circulator,,3,,47C995,FFFFFF
+53,,53,Breckenridge Lane Express,,3,,E49581,FFFFFF
+54,,54,Manslick Express,,3,,E49581,FFFFFF
+6,,6,Sixth Street,,3,,829ECE,FFFFFF
+61,,61,Plainview Express,,3,,E49581,FFFFFF
+62,,62,Breckenridge Shepherdsville,,3,,829ECE,FFFFFF
+63,,63,Crums Lane,,3,,829ECE,FFFFFF
+64,,64,Fincastle Forest Springs Express,,3,,E49581,FFFFFF
+66,,66,Mt. Washington - Shepherdsville Exp,,3,,E49581,FFFFFF
+67,,67,Oldham County Express,,3,,E49581,FFFFFF
+68,,68,Prospect Express,,3,,E49581,FFFFFF
+71,,71,Jeffersonville-Louisville-IUS,,3,,829ECE,FFFFFF
+72,,72,Clarksville,,3,,829ECE,FFFFFF
+75,,75,Bluegrass Circulator,,3,,829ECE,FFFFFF
+77,,77,Main Market Trolley,,3,,47C995,FFFFFF
+78,,78,Bluegrass Express,,3,,E49581,FFFFFF
+82,,82,New Albany - Jeffersonville,,3,,829ECE,FFFFFF
+93,,93,UPS U of L Shuttle,,3,,829ECE,FFFFFF
+94,,94,Cardinal Shuttle,,3,,47C995,FFFFFF
+99,,99,UPS West Louisville,,3,,829ECE,FFFFFF
