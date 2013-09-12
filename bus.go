@@ -23,6 +23,7 @@ import (
     "megaminor.com/go/realtime"
 )
 
+var findPage string
 var busses []bus = []bus{}
 var trips map[string]string = map[string]string{}
 var routes map[string]string = map[string]string{}
@@ -127,7 +128,7 @@ func loadTripsOrRoutes(filePath string, m map[string]string, keyPosition, valueP
 }
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprint(w, "Coming soon...")
+    fmt.Fprint(w, findPage)
 }
 
 func statusHandler(w http.ResponseWriter, r *http.Request) {
@@ -162,8 +163,9 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    pwd, _ := os.Getwd()
-    log.Println(pwd)
+    f, _ := ioutil.ReadFile("find.html")
+    findPage = string(f)
+
     loadTripsOrRoutes("routes.txt", routes, 0, 3)
     loadTripsOrRoutes("trips.txt", trips, 2, 3)
     loadTripsOrRoutes("trips.txt", tripsToRoutes, 2, 0)

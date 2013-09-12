@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=620">
+    <title>Closest TARC Bus</title>
+    
+    <style type="text/css">
+        body
+        {   
+            background-color: #132247;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+            font-weight: 300;
+            color: #E9EBF2;
+        }
+        #wrapper { margin: 0 auto; width: 600px; padding: 10px; }
+    </style>
+</head>
+<body>
+<section id="wrapper">
+    <header>
+      <h1>Closest TARC Bus</h1>
+    </header>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <article>
+      <p id="status">Finding your location...</p>
+    </article>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+    function success(position) {
+        $('#status').fadeOut();
+  
+        var mapcanvas = document.createElement('div');
+        mapcanvas.id = 'mapcanvas';
+        mapcanvas.style.height = '400px';
+        mapcanvas.style.width = '560px';
+    
+        document.querySelector('article').appendChild(mapcanvas);
+        
+        var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        var myOptions = {
+            zoom: 14,
+            center: latlng,
+            mapTypeControl: false,
+            navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+  
+        var marker = new google.maps.Marker({
+            position: latlng, 
+            map: map, 
+            title:"You are here! (within "+position.coords.accuracy+" meters)"
+        });
+        
+        $.ajax({
+            url: '/status',
+            dataType: 'json',
+            data: { lon: position.coords.longitude, lat: position.coords.latitude, allBusses: 0 },
+            success: function(data){
+                var busLatlng = new google.maps.LatLng(data[0].Point.Lat, data[0].Point.Lon);
+                
+                var busMarker = new google.maps.Marker({
+                    position: busLatlng, 
+                    map: map,
+                    icon: 'http://static.nyquistrate.com.s3.amazonaws.com/bus.png',
+                    title:"The bus is here! Beep beep!"
+                });
+                
+                $('#status').html('<strong>Route Name: </strong>' + data[0].RouteDescription + '<br><strong>Destination: </strong>' + data[0].TripDescription);
+                $('#status').fadeIn();
+            }
+        });
+    }
+
+    function error(msg) {
+        $('#status').fadeOut();
+        $('#status').html('Could not find your location.')
+        $('#status').fadeIn();
+    }
+
+    $(function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error);
+        } else {
+            $('#status').fadeOut();
+            $('#status').html('Could not find your location.')
+            $('#status').fadeIn();
+        }
+    });
+</script>
+
+    <footer>
+    </footer> 
+</section>
+</body>
+</html>
